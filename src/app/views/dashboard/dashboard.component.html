@@ -1,0 +1,97 @@
+<div class="container-fluid mt-3 dashboard-theme">
+    <div class="row">
+        <div class="col-11">
+            <h1 class="white-text"><b>Apex chart demo</b></h1>
+        </div>
+        <div class="col-1">
+            <button mat-stroked-button color="primary" (click)="openSettingDialog()">
+                <mat-icon class="m-0 cursor-pointer">settings</mat-icon>
+            </button>
+        </div>
+        <mat-divider class="pb-8"></mat-divider>
+    </div>
+    <div class="row">
+        <div class="col-6 col-md-6 col-sm-12 col-xs-12">
+            <div class="card chart-div">
+                <div class="card-title">
+                    <div class="row">
+                        <div class="col-9">
+                        </div>
+                        <div class="col-3">
+                            <button mat-icon-button [matMenuTriggerFor]="menu"
+                                aria-label="Example icon-button with a menu">
+                                <mat-icon>more_vert</mat-icon>
+                            </button>
+                            <mat-menu #menu="matMenu">
+                                <div class="custom-mat-menu">
+                                    <mat-radio-group aria-labelledby="example-radio-group-label" class="example-radio-group"
+                                    [(ngModel)]="chartType" (ngModelChange)="prepareChartData()">
+                                    <ng-container *ngFor="let type of chartTypeArray">
+                                        <mat-radio-button [value]="type">
+                                            <span class="radio-btn-label"> {{type}}</span>
+                                        </mat-radio-button>
+                                        <br>
+                                    </ng-container>
+                                </mat-radio-group>
+                                </div>
+                            </mat-menu>
+                            <mat-icon class="cursor-pointer" (click)="openChartDailog()">
+                                fullscreen
+                            </mat-icon>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <apx-chart id="chart1" [series]="card1ChartOptions?.series" [chart]="card1ChartOptions?.chart"
+                        [xaxis]="card1ChartOptions?.xaxis" [dataLabels]="card1ChartOptions?.dataLabels"
+                        [plotOptions]="card1ChartOptions?.plotOptions" [yaxis]="card1ChartOptions?.yaxis"
+                        [legend]="card1ChartOptions?.legend" [fill]="card1ChartOptions?.fill"
+                        [stroke]="card1ChartOptions?.stroke" [labels]="card1ChartOptions?.labels"
+                        [tooltip]="card1ChartOptions?.tooltip" [grid]="card1ChartOptions?.grid"
+                        [colors]="card1ChartOptions?.colors"></apx-chart>
+                </div>
+            </div>
+        </div>
+        <div class="col-6 col-md-6 col-sm-12 col-xs-12">
+            <div class="card chart-div">
+                <div class="card-title">
+                    <div class="row">
+                        <div class="col-9">
+                        </div>
+                        <div class="col-3">
+                            <button mat-icon-button [matMenuTriggerFor]="menu2">
+                                <mat-icon>more_vert</mat-icon>
+                            </button>
+                            <mat-menu #menu2="matMenu">
+                                <div  class="custom-mat-menu">
+                                    <mat-radio-group aria-labelledby="example-radio-group-label" class="example-radio-group"
+                                    [(ngModel)]="chartType2" (ngModelChange)="createComparativeChart()">
+                                    <ng-container *ngFor="let type of comparativeChartTypeArray">
+                                        <mat-radio-button [value]="type">
+                                            <span class="radio-btn-label">{{type}}</span>
+                                        </mat-radio-button>
+                                        <br>
+                                    </ng-container>
+                                </mat-radio-group>
+                                </div>
+                                
+                            </mat-menu>
+                            <mat-icon class="cursor-pointer" (click)="openChartDailog(true)">
+                                fullscreen
+                            </mat-icon>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <apx-chart id="chart2" [series]="card2ChartOptions?.series" [chart]="card2ChartOptions?.chart"
+                        [xaxis]="card2ChartOptions?.xaxis" [dataLabels]="card2ChartOptions?.dataLabels"
+                        [plotOptions]="card2ChartOptions?.plotOptions" [yaxis]="card2ChartOptions?.yaxis"
+                        [legend]="card2ChartOptions?.legend" [fill]="card2ChartOptions?.fill"
+                        [stroke]="card2ChartOptions?.stroke" [labels]="card2ChartOptions?.labels"
+                        [tooltip]="card2ChartOptions?.tooltip" [grid]="card2ChartOptions?.grid"
+                        [colors]="card2ChartOptions?.colors"></apx-chart>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

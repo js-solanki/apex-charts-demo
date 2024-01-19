@@ -1,0 +1,34 @@
+.dashboard-theme {
+    font-family: Georgia, serif;
+    padding: 0px;
+    margin: 0px;
+
+    .m-0 {
+        margin: 0;
+    }
+
+    .pb-8 {
+        padding-bottom: 8px;
+    }
+
+    .row {
+        margin: 0px !important;
+    }
+
+    .chart-div {
+        height: 400px;
+        width: 100%;
+
+    }
+
+    .radio-btn-label {
+        color: black;
+    }
+
+    .cursor-pointer {
+        cursor: pointer;
+    }
+}
+.custom-mat-menu{
+    padding: 10px !important;
+}

@@ -1,0 +1,49 @@
+<div mat-title>
+    <h3 class="setting-dialog-title align-middle">Setting<mat-icon class="p-0 align-middle">settings</mat-icon></h3>
+</div>
+<mat-divider></mat-divider>
+<div class="row mt-3 setting-section">
+    <div class="col-4">
+        <div class="setting-title">Label Color:</div>
+        <mat-radio-group aria-labelledby="example-radio-group-label" class="example-radio-group"
+            [(ngModel)]="selectedLabelColor">
+            <ng-container *ngFor="let type of labelColorOptions">
+                <mat-radio-button [value]="type.color" color="primary">
+                    <span class="radio-btn-label"> {{type.name}}</span>
+                </mat-radio-button><br>
+            </ng-container>
+        </mat-radio-group>
+    </div>
+    <div class="col-4">
+        <div class="setting-title">Label Alignment:</div>
+        <mat-radio-group aria-labelledby="example-radio-group-label" class="example-radio-group"
+            [(ngModel)]="selectedLabelAlignment">
+            <ng-container *ngFor="let align of labelAlignMentArray">
+                <mat-radio-button [value]="align" color="primary">
+                    <span class="radio-btn-label"> {{align}}</span>
+                </mat-radio-button><br>
+            </ng-container>
+
+        </mat-radio-group>
+    </div>
+    <div class="col-4">
+        <div class="setting-title">Tools :</div>
+        <mat-checkbox color="primary" class="example-margin" [(ngModel)]="tools.download">download</mat-checkbox>
+        <mat-checkbox color="primary" class="example-margin" [(ngModel)]="tools.zoom">zoom</mat-checkbox>
+        <mat-checkbox color="primary" class="example-margin" [(ngModel)]="tools.zoomin">zoomin</mat-checkbox>
+        <mat-checkbox color="primary" class="example-margin" [(ngModel)]="tools.zoomout">zoomout</mat-checkbox>
+        <mat-checkbox color="primary" class="example-margin" [(ngModel)]="tools.reset">reset</mat-checkbox>
+    </div>
+</div>
+<br>
+<mat-divider></mat-divider>
+<div mat-dialog-action>
+    <div class="align-middle dialog-action">
+        <button mat-raised-button color="primary" (click)="saveSettings()">
+            SAVE
+        </button>
+        <button mat-raised-button mat-dialog-close>
+            CANCEL
+        </button>
+    </div>
+</div>

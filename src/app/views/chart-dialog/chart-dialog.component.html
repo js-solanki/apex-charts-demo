@@ -1,0 +1,16 @@
+<div class="chart-dialog">
+    <div class="row mt-3">
+        <div class="col-11">
+        </div>
+        <div class="col-1">
+            <mat-icon class="cursor-pointer" mat-dialog-close>close</mat-icon>
+        </div>
+    </div>
+    <mat-divider></mat-divider>
+    <div class="chart-div">
+        <apx-chart [series]="data?.series" [chart]="data?.chart" [xaxis]="data?.xaxis" [dataLabels]="data?.dataLabels"
+            [plotOptions]="data?.plotOptions" [yaxis]="data?.yaxis" [legend]="data?.legend" [fill]="data?.fill"
+            [stroke]="data?.stroke" [labels]="data?.labels" [tooltip]="data?.tooltip" [grid]="data?.grid"
+            [colors]="data?.colors"></apx-chart>
+    </div>
+</div>
